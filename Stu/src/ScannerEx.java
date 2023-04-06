@@ -16,7 +16,6 @@ public class ScannerEx {
 		int age = sc.nextInt();
 		System.out.print("나이는 " + age +"  살 ,  ");
 		
-		
 		double weight = sc.nextDouble();
 		System.out.print("체중은 " + weight +"kg," );
 		
