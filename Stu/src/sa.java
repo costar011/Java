@@ -58,7 +58,7 @@ public class sa {
 			if(arr[i] < min) {
 				min = arr[i];
 			}
-		}
+		} 
 	
 		
 		System.out.println("가장 큰 수는 " + max + "입니다 ");
@@ -67,3 +67,5 @@ public class sa {
 	}
 
 }
+
+
