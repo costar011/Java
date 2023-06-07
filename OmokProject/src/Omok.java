@@ -246,3 +246,5 @@ class GoEgg extends JButton {
  * 생성된 돌은 이미지로 표시되는 JButton 객체입니다. 생성자에서는 돌의 초기 상태를 "A"로 설정
  * 
  * */
+
+
