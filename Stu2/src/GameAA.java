@@ -30,16 +30,16 @@ class carGameAA extends JFrame {
 		la1.setSize(100, 50);
 		la2.setSize(100, 50);
 		la3.setSize(100, 50);
-		
+
 		bt1.setSize(100, 50);
 		bt2.setSize(100, 50);
 
 		la1.setLocation(50, 0);
 		la2.setLocation(50, 50);
 		la3.setLocation(50, 100);
-		
+
 		bt1.setLocation(50, 200); // 50 <- X , 200 <- Y
-		bt2.setLocation(250, 200); // 250 <- X , 200 <- Y
+		bt2.setLocation(200, 200); // 250 <- X , 200 <- Y
 
 		c.add(la1);
 		c.add(la2);
@@ -54,9 +54,18 @@ class carGameAA extends JFrame {
 
 	class MyAction implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			th1.start();
-			th2.start();
-			th3.start();
+			
+			if (e.getSource() == bt1) { // START 버튼 클릭
+				th1.start();
+				th2.start();
+				th3.start();
+				
+			} else if (e.getSource() == bt2) { // STOP 버튼 클릭
+				th1.interrupt();
+				th2.interrupt();
+				th3.interrupt();
+			}
+
 		}
 	}
 
@@ -78,12 +87,12 @@ class MyThreadA extends Thread {
 			ix += 10 * Math.random();
 
 			if (ix > 500) {
-				ix = 400;
+				ix = 500;
 			}
 			label.setLocation(ix, iy);
 
 			try {
-				Thread.sleep(500);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				return;
 			}
