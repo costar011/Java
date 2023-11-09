@@ -1,5 +1,6 @@
 import java.awt.Container;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -11,6 +12,8 @@ class carGameAA extends JFrame {
 	MyThreadA th1 = new MyThreadA(la1);
 	MyThreadA th2 = new MyThreadA(la2);
 	MyThreadA th3 = new MyThreadA(la3);
+	
+	JButton bt1 = new JButton("START");
 	
 	public carGameAA() {
 		setTitle("CarRace");
@@ -25,14 +28,18 @@ class carGameAA extends JFrame {
 		la1.setSize(100,50);
 		la2.setSize(100,50);
 		la3.setSize(100,50);
+		bt1.setSize(100,50);
 		
 		la1.setLocation(50,0);
 		la2.setLocation(50,50);
 		la3.setLocation(50,100);
+		bt1.setLocation(50,200); // 50 <- X , 200 <- Y
+
 		
 		c.add(la1);
 		c.add(la2);
 		c.add(la3);
+		c.add(bt1);
 		
 		th1.start();
 		th2.start();
