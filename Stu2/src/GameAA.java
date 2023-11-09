@@ -16,6 +16,7 @@ class carGameAA extends JFrame {
 	MyThreadA th3 = new MyThreadA(la3);
 
 	JButton bt1 = new JButton("START");
+	JButton bt2 = new JButton("STOP");
 
 	public carGameAA() {
 		setTitle("CarRace");
@@ -29,19 +30,25 @@ class carGameAA extends JFrame {
 		la1.setSize(100, 50);
 		la2.setSize(100, 50);
 		la3.setSize(100, 50);
+		
 		bt1.setSize(100, 50);
+		bt2.setSize(100, 50);
 
 		la1.setLocation(50, 0);
 		la2.setLocation(50, 50);
 		la3.setLocation(50, 100);
+		
 		bt1.setLocation(50, 200); // 50 <- X , 200 <- Y
+		bt2.setLocation(250, 200); // 250 <- X , 200 <- Y
 
 		c.add(la1);
 		c.add(la2);
 		c.add(la3);
 		c.add(bt1);
+		c.add(bt2);
 
 		bt1.addActionListener(new MyAction());
+		bt2.addActionListener(new MyAction());
 
 	}
 
@@ -71,7 +78,7 @@ class MyThreadA extends Thread {
 			ix += 10 * Math.random();
 
 			if (ix > 500) {
-				ix = 500;
+				ix = 400;
 			}
 			label.setLocation(ix, iy);
 
