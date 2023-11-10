@@ -6,7 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-class carGameAA extends JFrame {
+class CarGameAA extends JFrame {
 	JLabel la1 = new JLabel("A");
 	JLabel la2 = new JLabel("B");
 	JLabel la3 = new JLabel("C");
@@ -17,8 +17,12 @@ class carGameAA extends JFrame {
 
 	JButton bt1 = new JButton("START");
 	JButton bt2 = new JButton("STOP");
+	
+	
+	JLabel resultLabel = new JLabel("들어온 순위 결과 값");
+	JLabel res = new JLabel();
 
-	public carGameAA() {
+	public CarGameAA() {
 		setTitle("CarRace");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(600, 300);
@@ -33,28 +37,29 @@ class carGameAA extends JFrame {
 
 		bt1.setSize(100, 50);
 		bt2.setSize(100, 50);
+		resultLabel.setSize(300, 50);
 
 		la1.setLocation(50, 0);
 		la2.setLocation(50, 50);
 		la3.setLocation(50, 100);
 
-		bt1.setLocation(50, 200); // 50 <- X , 200 <- Y
-		bt2.setLocation(200, 200); // 250 <- X , 200 <- Y
+		bt1.setLocation(50, 200);
+		bt2.setLocation(200, 200);
+		resultLabel.setLocation(50, 150);
 
 		c.add(la1);
 		c.add(la2);
 		c.add(la3);
 		c.add(bt1);
 		c.add(bt2);
+		c.add(resultLabel);
 
 		bt1.addActionListener(new MyAction());
 		bt2.addActionListener(new MyAction());
-
 	}
 
 	class MyAction implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			
 			if (e.getSource() == bt1) { // START 버튼 클릭
 				th1.start();
 				th2.start();
@@ -65,15 +70,14 @@ class carGameAA extends JFrame {
 				th2.interrupt();
 				th3.interrupt();
 			}
-
 		}
 	}
-
 }
 
 class MyThreadA extends Thread {
 	private JLabel label;
 	private int ix, iy;
+	private static int rank = 1;
 
 	public MyThreadA(JLabel la) {
 		label = la;
@@ -88,6 +92,8 @@ class MyThreadA extends Thread {
 
 			if (ix > 500) {
 				ix = 500;
+				
+				
 			}
 			label.setLocation(ix, iy);
 
@@ -101,9 +107,7 @@ class MyThreadA extends Thread {
 }
 
 public class GameAA {
-
 	public static void main(String[] args) {
-		new carGameAA();
+		new CarGameAA();
 	}
-
 }
