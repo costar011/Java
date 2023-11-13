@@ -17,8 +17,7 @@ class CarGameAA extends JFrame {
 
 	JButton bt1 = new JButton("START");
 	JButton bt2 = new JButton("STOP");
-	
-	
+
 	JLabel resultLabel = new JLabel("들어온 순위 결과 값");
 	JLabel res = new JLabel();
 
@@ -64,7 +63,7 @@ class CarGameAA extends JFrame {
 				th1.start();
 				th2.start();
 				th3.start();
-				
+
 			} else if (e.getSource() == bt2) { // STOP 버튼 클릭
 				th1.interrupt();
 				th2.interrupt();
@@ -92,8 +91,7 @@ class MyThreadA extends Thread {
 
 			if (ix > 500) {
 				ix = 500;
-				
-				
+
 			}
 			label.setLocation(ix, iy);
 
