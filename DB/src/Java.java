@@ -1,16 +1,7 @@
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+import java.sql.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
 class JDBC_Frame extends JFrame {
 	Statement stmt = null;
@@ -68,16 +59,17 @@ class JDBC_Frame extends JFrame {
 	}
 
 	class MyActionNext implements ActionListener {
-		public void  actionPerformed(ActionEvent e) {
+		public void actionPerformed(ActionEvent e) {
 			try {
 				if (srs.next()) {
 					name = srs.getString("name");
 				} else {
 					txtName.setText("END");
-				} catch (SQLException e1) {
-					System.out.println("SQL error");
 				}
-			} 
+
+			} catch (SQLException e1) {
+				System.out.println("SQL error");
+			}
 		}
 	}
 }
