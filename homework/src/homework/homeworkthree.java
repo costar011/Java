@@ -4,6 +4,16 @@ import java.util.Scanner;
 
 public class homeworkthree {
 
+	public static int yerim(int[] array) {
+		int sum = 0;
+		
+		for (int i = 0; i<array.length; i++) {
+			sum += array[i];
+		}
+		
+		return sum;
+	}
+	
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
@@ -14,9 +24,6 @@ public class homeworkthree {
 
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = sc.nextInt();
-		}
-
-		for (int i = 0; i < arr.length; i++) {
 		}
 
 		int evenSum = 0;
@@ -34,6 +41,8 @@ public class homeworkthree {
 			}
 		}
 
+		System.out.println("배열의 모든 합 : "+yerim(arr));
+		
 		sc.close();
 	}
 
