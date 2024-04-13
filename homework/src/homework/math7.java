@@ -4,6 +4,7 @@ public class math7 {
 
 	   public static void main(String[] args) {
 	      //배열에서 큰 수를 분할 정복을 사용해서 구하기 의사코드 작성하고 구현
+		   
 	      int[] arr = { 1,3,4,56,77,22,81,97,56,10,82 };
 	      
 	      System.out.println(BinaryTree(arr,0,10));

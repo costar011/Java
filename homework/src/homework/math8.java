@@ -3,9 +3,8 @@ package homework;
 public class math8 {
     public static void main(String[] args) {
     	 //1부터 n까지 덧셈을 재귀함수 사용해서 구현, 시간복잡도 구하기
-    	
          
-        System.out.println(sum(5));
+        System.out.println(sum(10));
     }
     
     static int sum(int n) {
