@@ -11,6 +11,7 @@ public class math6 {
         int max2 = Integer.MIN_VALUE; 
         
         for (int i = 1; i < arr.length; i++) {
+        	
             if (max < arr[i]) {
                 max2 = max;
                 max = arr[i];
